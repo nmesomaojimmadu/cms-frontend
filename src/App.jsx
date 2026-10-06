@@ -1,16 +1,17 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+
 import Dashboard from './pages/Dashboard'
 import Categories from './pages/Categories'
 import Posts from './pages/Posts'
 import Comments from './pages/Comments'
 import Users from './pages/Users'
+
 import './App.css'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
-
         <aside className="sidebar">
           <h2>CREATE</h2>
 
@@ -24,7 +25,6 @@ function App() {
         </aside>
 
         <main className="main-content">
-
           <header className="topbar">
             <h1>CMS Dashboard</h1>
           </header>
@@ -38,9 +38,7 @@ function App() {
               <Route path="/users" element={<Users />} />
             </Routes>
           </section>
-
         </main>
-
       </div>
     </BrowserRouter>
   )

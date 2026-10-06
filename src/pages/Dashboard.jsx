@@ -5,7 +5,6 @@ function Dashboard() {
       <p>Welcome to the CREATE CMS Dashboard.</p>
 
       <div className="dashboard-cards">
-
         <div className="card">
           <h3>Posts</h3>
           <p>0</p>
@@ -25,7 +24,6 @@ function Dashboard() {
           <h3>Users</h3>
           <p>0</p>
         </div>
-
       </div>
     </div>
   )
