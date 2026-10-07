@@ -1,55 +1,125 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  NavLink,
+  Outlet,
+} from 'react-router-dom'
 
+import Welcome from './pages/Welcome'
+import Register from './pages/Register'
+import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Categories from './pages/Categories'
 import Posts from './pages/Posts'
 import Comments from './pages/Comments'
 import Users from './pages/Users'
 
+
 import './App.css'
+
+function DashboardLayout() {
+  return (
+    <div className="app">
+      <aside className="sidebar">
+        <div className="brand">CREATE</div>
+
+        <nav className="sidebar-nav">
+          <NavLink to="/dashboard">
+            Dashboard
+          </NavLink>
+
+          <NavLink to="/categories">
+            Categories
+          </NavLink>
+
+          <NavLink to="/posts">
+            Posts
+          </NavLink>
+
+          <NavLink to="/comments">
+            Comments
+          </NavLink>
+
+          <NavLink to="/users">
+            Users
+          </NavLink>
+        </nav>
+
+        <div className="sidebar-bottom">
+          <button className="logout-button">
+            Log out
+          </button>
+        </div>
+      </aside>
+
+      <main className="main-content">
+        <header className="topbar">
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search your content..."
+            />
+          </div>
+
+          <div className="topbar-actions">
+            <button className="notification-button">
+              ♟
+            </button>
+
+            <div className="profile-avatar">
+              AO
+            </div>
+          </div>
+        </header>
+
+        <section className="content">
+          <Outlet />
+        </section>
+      </main>
+    </div>
+  )
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app">
-        <aside className="sidebar">
-          <div className="brand">CREATE</div>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
 
-          <nav className="sidebar-nav">
-            <Link to="/">Dashboard</Link>
-            <Link to="/categories">Categories</Link>
-            <Link to="/posts">Posts</Link>
-            <Link to="/comments">Comments</Link>
-            <Link to="/users">Users</Link>
-          </nav>
-        </aside>
+        <Route path="/register" element={<Register />} />
 
-        <main className="main-content">
-          <header className="topbar">
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search your content..."
-              />
-            </div>
+        <Route path="/login" element={<Login />} />
 
-            <div className="topbar-actions">
-              <button className="notification-button">♟</button>
-              <div className="profile-avatar">AO</div>
-            </div>
-          </header>
+        <Route element={<DashboardLayout />}>
 
-          <section className="content">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/categories" element={<Categories />} />
-              <Route path="/posts" element={<Posts />} />
-              <Route path="/comments" element={<Comments />} />
-              <Route path="/users" element={<Users />} />
-            </Routes>
-          </section>
-        </main>
-      </div>
+        
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+
+          <Route
+            path="/categories"
+            element={<Categories />}
+          />
+
+          <Route
+            path="/posts"
+            element={<Posts />}
+          />
+
+          <Route
+            path="/comments"
+            element={<Comments />}
+          />
+
+          <Route
+            path="/users"
+            element={<Users />}
+          />
+        </Route>
+      </Routes>
     </BrowserRouter>
   )
 }

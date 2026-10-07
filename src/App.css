@@ -34,6 +34,8 @@ a {
 .sidebar {
   width: 220px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 20px 12px;
   background: #f5f1e6;
   border-right: 1px solid #d8d1c3;
@@ -42,7 +44,7 @@ a {
 
 .brand {
   padding: 0 12px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -52,17 +54,18 @@ a {
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
 }
 
 .sidebar-nav a {
   display: flex;
   align-items: center;
-  min-height: 40px;
-  padding: 0 12px;
+  min-height: 44px;
+  padding: 0 14px;
   border-radius: 7px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  font-weight: 600;
   color: #5d584e;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -72,7 +75,37 @@ a {
   color: #1d170b;
 }
 
-.sidebar-nav a:first-child {
+.sidebar-nav a.active {
+  background: #1d1a15;
+  color: #ffffff;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.logout-button {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 7px;
+  text-align: center;
+  background: #1d170b;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #d7cfc0;
+  color: #17130c;
+}
+
+.logout-button:active {
   background: #1d1a15;
   color: #ffffff;
 }
@@ -198,6 +231,12 @@ a {
     padding: 0 14px;
   }
 
+  .sidebar-bottom {
+    margin-top: 12px;
+    padding-top: 0;
+  }
+
+  
   .topbar {
     height: 64px;
     padding: 0 16px;
