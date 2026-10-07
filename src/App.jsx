@@ -13,9 +13,9 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <aside className="sidebar">
-          <h2>CREATE</h2>
+          <div className="brand">CREATE</div>
 
-          <nav>
+          <nav className="sidebar-nav">
             <Link to="/">Dashboard</Link>
             <Link to="/categories">Categories</Link>
             <Link to="/posts">Posts</Link>
@@ -26,7 +26,17 @@ function App() {
 
         <main className="main-content">
           <header className="topbar">
-            <h1>CMS Dashboard</h1>
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search your content..."
+              />
+            </div>
+
+            <div className="topbar-actions">
+              <button className="notification-button">♟</button>
+              <div className="profile-avatar">AO</div>
+            </div>
           </header>
 
           <section className="content">
