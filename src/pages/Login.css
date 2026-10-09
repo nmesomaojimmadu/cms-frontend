@@ -150,6 +150,40 @@
   background: #c9361e;
 }
 
+
+.form-error {
+  margin: 12px 0;
+  color: #c62828;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+.auth-button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  vertical-align: middle;
+  animation: create-spin 0.7s linear infinite;
+}
+
+@keyframes create-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 @media (max-width: 500px) {
   .auth-page {
     padding: 30px 16px;
